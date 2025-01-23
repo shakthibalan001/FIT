@@ -2,7 +2,7 @@ import { CircularProgress } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 
-const Button = styled.div`
+const StyledButton = styled.div`
   border-radius: 10px;
   color: white;
   font-size: 14px;
@@ -24,50 +24,54 @@ const Button = styled.div`
     type === "secondary"
       ? `
   background: ${theme.secondary};
-border: 1px solid ${({ theme }) => theme.secondary};
+  border: 1px solid ${theme.secondary};
   `
       : `
   background: ${theme.primary};
 `}
 
-  ${({ isDisabled }) =>
-    isDisabled &&
+  ${({ $isDisabled }) =>
+    $isDisabled &&
     `
   opacity: 0.8;
   cursor: not-allowed;
+`}
 
-  `}
-  ${({ isLoading }) =>
-    isLoading &&
+  ${({ $isLoading }) =>
+    $isLoading &&
     `
-    opacity: 0.8;
+  opacity: 0.8;
   cursor: not-allowed;
 `}
-${({ flex }) =>
+
+  ${({ flex }) =>
     flex &&
     `
-    flex: 1;
+  flex: 1;
 `}
 
-${({ small }) =>
+  ${({ small }) =>
     small &&
     `
-padding: 10px 28px;
+  padding: 10px 28px;
 `}
+
   ${({ outlined, theme }) =>
     outlined &&
     `
-background: transparent;
-color: ${theme.primary};
+  background: transparent;
+  color: ${theme.primary};
   box-shadow: none;
 `}
+
   ${({ full }) =>
     full &&
     `
-  width: 100%;`}
+  width: 100%;
+`}
 `;
 
-const button = ({
+const Button = ({
   text,
   isLoading,
   isDisabled,
@@ -81,11 +85,11 @@ const button = ({
   full,
 }) => {
   return (
-    <Button
-      onClick={() => !isDisabled && !isLoading && onClick()}
-      isDisabled={isDisabled}
+    <StyledButton
+      onClick={() => !isDisabled && !isLoading && onClick?.()}
+      $isDisabled={isDisabled}
+      $isLoading={isLoading}
       type={type}
-      isLoading={isLoading}
       flex={flex}
       small={small}
       outlined={outlined}
@@ -100,8 +104,8 @@ const button = ({
       {text}
       {isLoading && <> . . .</>}
       {rightIcon}
-    </Button>
+    </StyledButton>
   );
 };
 
-export default button;
+export default Button;
