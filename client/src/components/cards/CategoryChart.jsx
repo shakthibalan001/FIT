@@ -14,6 +14,7 @@ const Card = styled.div`
   gap: 6px;
   @media (max-width: 600px) {
     padding: 16px;
+    
   }
 `;
 const Title = styled.div`
