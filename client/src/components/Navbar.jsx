@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 import { logout } from "../redux/reducers/userSlice";
 
 const Nav = styled.div`
-  background-color: ${({ theme }) => theme.bg};
+  background-color:rgb(255, 0, 0);;
   height: 80px;
   display: flex;
   align-items: center;
@@ -18,7 +18,7 @@ const Nav = styled.div`
   top: 0;
   z-index: 10;
   color: white;
-  border-bottom: 1px solid ${({ theme }) => theme.text_secondary + 20};
+  border-bottom: 3px solid rgb(0, 0, 0);;
 `;
 const NavContainer = styled.div`
   width: 100%;
@@ -39,7 +39,7 @@ const NavLogo = styled(LinkR)`
   font-weight: 600;
   font-size: 18px;
   text-decoration: none;
-  color: ${({ theme }) => theme.black};
+  color:rgb(0, 0, 0);;
 `;
 const Logo = styled.img`
   height: 42px;
@@ -69,17 +69,17 @@ const NavItems = styled.ul`
 const Navlink = styled(NavLink)`
   display: flex;
   align-items: center;
-  color: ${({ theme }) => theme.text_primary};
+  color:rgb(56, 213, 248);;
   font-weight: 500;
   cursor: pointer;
   transition: all 1s slide-in;
   text-decoration: none;
   &:hover {
-    color: ${({ theme }) => theme.primary};
+    color:rgb(0, 255, 251);;
   }
   &.active {
-    color: ${({ theme }) => theme.primary};
-    border-bottom: 1.8px solid ${({ theme }) => theme.primary};
+    color:rgb(0, 0, 0);;
+    border-bottom: 1.8px solid rgb(255, 255, 255);;
   }
 `;
 

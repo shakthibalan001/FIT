@@ -16,12 +16,12 @@ const Container = styled.div`
 const Title = styled.div`
   font-size: 30px;
   font-weight: 800;
-  color: ${({ theme }) => theme.text_primary};
+  color:  #4A90E2;
 `;
 const Span = styled.div`
   font-size: 16px;
   font-weight: 400;
-  color: ${({ theme }) => theme.text_secondary + 90};
+  color:rgb(11, 248, 248);
 `;
 
 const SignUp = () => {

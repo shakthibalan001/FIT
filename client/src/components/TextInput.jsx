@@ -80,7 +80,7 @@ const Input = styled.input`
   outline: none;
   border: none;
   background-color: transparent;
-  color: ${({ theme }) => theme.text_primary};
+  color:rgb(255, 89, 0);
   &:focus {
     outline: none;
   }
